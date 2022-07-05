@@ -1,22 +1,31 @@
 package testPjt;
 
-import java.util.Iterator;
 import java.util.Scanner;
-
+	/*
+	 * N(a,b,c.....,z)
+	 * ####(a+b+c)/M/N
+	 * */
 public class Boj_1546 {
 	public static void main(String[] args) {
-		// 배열 선언 
-		int[] arr = {};
-		// 과목의 N
 		Scanner sc = new Scanner(System.in);
-		int count = sc.nextInt();
 		
-		//for문을 통하여 arr에 성적 입력하기
-		for (int i = 0; i < count; i++) {
-			arr[i] = sc.nextInt(); 
+		int N = sc.nextInt(); //개수 입력
+		int[] A = new int[N]; //list 생성 a,b,c.....
+		
+		for (int i = 0; i < N; i++) {
+			A[i] =  sc.nextInt();
+		} //a,b,c 입력
+		
+		long sum = 0; //각 개수의 합
+		long max = 0; //최대값
+		
+		for (int i = 0; i < N ; i++) {
+			
+			if(A[i] > max) max = A[i]; 
+			sum = sum + A[i];		
 		}
-		
-		//
+		System.out.println(sum*100.0/max/N);
+		sc.close();
 	}
 
 }
